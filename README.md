@@ -22,3 +22,10 @@ cd docker-demo && \
 docker build -t docker-demo . && \
 snyk test --docker docker-demo --file=Dockerfile
 ```
+
+## Screenshots
+
+![Base Image Remediation Screenshot](screenshots/base_image_remediation.png "Base Image Remediation")
+![Base Image Vulnerability Screenshot](screenshots/base_image_vulnerability.png "Base Image Vulnerability")
+![Binary Vulnerability Screenshot](screenshots/binary_vulnerability.png "Binary Vulnerability")
+![User-introduced / Dockerfile vulnerability screenshot](screenshots/user_introduced_vulnerability.png "User-introduced / Dockerfile Vulnerability")
