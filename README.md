@@ -1,37 +1,37 @@
-# Docker demo
+# Docker Goof
 
-Open a terminal and open the `docker-demo` directory.
+Open a terminal and open the `docker-goof` directory.
 
 1. Build the image
 
    ```console
-   docker build -t docker-demo .
+   docker build -t docker-goof .
    ```
 
 2. Test the image
 
    ```console
-   snyk test --docker docker-demo --file=Dockerfile
+   snyk test --docker docker-goof --file=Dockerfile
    ```
 
 All-in-one to clone and run:
 
 ```console
-git clone git@github.com:snyk/docker-demo && \
-cd docker-demo && \
-docker build -t docker-demo . && \
-snyk test --docker docker-demo --file=Dockerfile
+git clone git@github.com:snyk/docker-goof && \
+cd docker-goof && \
+docker build -t docker-goof . && \
+snyk test --docker docker-goof --file=Dockerfile
 ```
 
 ## Screenshots
 
-All of these screenshots demonstrate the extra value provided when a
+All of these screenshots goofnstrate the extra value provided when a
 Dockerfile is supplied via the CLI `--file` argument.
 
 For example:
 
   ```console
-  snyk test --docker docker-demo --file=Dockerfile
+  snyk test --docker docker-goof --file=Dockerfile
   ```
 
 ### Base Image Remediation
