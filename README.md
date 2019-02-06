@@ -25,7 +25,7 @@ snyk test --docker docker-goof --file=Dockerfile
 
 ## Screenshots
 
-All of these screenshots goofnstrate the extra value provided when a
+All of these screenshots demonstrate the extra value provided when a
 Dockerfile is supplied via the CLI `--file` argument.
 
 For example:
