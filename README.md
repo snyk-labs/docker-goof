@@ -47,7 +47,8 @@ to investigate.
 ### Base Image Vulnerability
 
 This screenshot shows an image with a vulnerability introduced by the base
-image (the `FROM` line in a Dockerfile)
+image (the `FROM` line in a Dockerfile) with the "Introduced by your base
+image ..." line
 
 ![Base Image Vulnerability Screenshot](screenshots/base_image_vulnerability.png "Base Image Vulnerability")
 
@@ -61,6 +62,7 @@ package manager of the operating system inside the container.
 ### User-introduced / Dockerfile Vulnerability
 
 This screenshot shows an image introduced by a user in their Dockerfile and
-highlights the exact command that introduced the vulnerability
+highlights the exact command that introduced the vulnerability, with the
+"Introduced in your Dockerfile by ..." line
 
 ![User-introduced / Dockerfile vulnerability screenshot](screenshots/user_introduced_vulnerability.png "User-introduced / Dockerfile Vulnerability")
