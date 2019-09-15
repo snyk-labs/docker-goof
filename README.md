@@ -23,7 +23,7 @@ docker build -t docker-goof . && \
 snyk test --docker docker-goof --file=Dockerfile
 ```
 
-###Utility scripts
+## Utility scripts
 
 To build all images:
 
