@@ -1,6 +1,6 @@
 # Docker Goof
 
-Open a terminal and open the `docker-goof` directory.
+Open a terminal at the `docker-goof` directory.
 
 1. Build the image
 
@@ -22,6 +22,20 @@ cd docker-goof && \
 docker build -t docker-goof . && \
 snyk test --docker docker-goof --file=Dockerfile
 ```
+
+## Utility scripts
+
+To build all images:
+
+   ```console
+   ./build.sh
+   ```
+
+To test all images:
+
+   ```console
+   ./test.sh
+   ```
 
 ## Screenshots
 
