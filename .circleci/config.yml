@@ -1,0 +1,36 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: docker:git
+    steps:
+      - checkout
+      - setup_remote_docker:
+          reusable: true
+      - run:
+          name: Authenticate against Artifactory Docker registry
+          command: echo "$ARTIFACTORY_TOKEN" | docker login --username "$ARTIFACTORY_USER" --password-stdin $ARTIFACTORY_DOCKER_REGISTRY
+      - run:
+          name: Authenticate against Quay Docker registry
+          command: echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin $DOCKER_REGISTRY
+      - run:
+          name: Push to Docker Registry
+          command: |
+            docker run \
+              --env ARTIFACTORY_TOKEN \
+              --env ARTIFACTORY_USER \
+              --env CIRCLE_BRANCH \
+              --env CIRCLE_BUILD_NUM \
+              --env CIRCLE_SHA1 \
+              --env DOCKER_USER="$DOCKER_USERNAME" \
+              --env DOCKER_PASS="$DOCKER_PASSWORD" \
+              --env TWISTCLI_PASSWORD \
+              --volume /var/run/docker.sock:/var/run/docker.sock \
+              quay.io/fundingcircle/docker-scripts:latest docker/ci-docker-publish
+workflows:
+  version: 2
+  test-build-tag:
+    jobs:
+      - build:
+          context: org-global
