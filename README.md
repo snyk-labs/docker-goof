@@ -1,6 +1,5 @@
 # Docker Goof
 
-
 Open a terminal at the `docker-goof` directory.
 
 1. Build the image
