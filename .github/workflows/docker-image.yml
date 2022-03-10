@@ -1,0 +1,32 @@
+name: "Snyk Docker"
+description: "Check your Docker images for vulnerabilties using Snyk"
+author: "Gareth Rushgrove"
+branding:
+  icon: "alert-triangle"
+  color: "yellow"
+inputs:
+  command:
+    description: "Which Snyk command to run, defaults to test"
+    default: test
+  args:
+    description: "Additional arguments to pass to Snyk"
+  image:
+    description: "Image to test"
+  json:
+    description: "Output a snyk.json file with results if running the test command"
+    default: false
+  sarif:
+    description: "Output a snyk.sarif file with results if running the test command"
+    default: true
+runs:
+  using: "docker"
+  image: "docker://snyk/snyk:docker"
+  env:
+    SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
+    SNYK_INTEGRATION_VERSION: docker
+  args:
+  - snyk
+  - ${{ inputs.command }}
+  - ${{ inputs.args }}
+  - --docker
+  - ${{ inputs.image }}
