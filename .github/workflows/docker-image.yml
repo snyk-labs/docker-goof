@@ -4,6 +4,12 @@ author: "Gareth Rushgrove"
 branding:
   icon: "alert-triangle"
   color: "yellow"
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 inputs:
   command:
     description: "Which Snyk command to run, defaults to test"
