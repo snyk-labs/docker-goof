@@ -4,6 +4,7 @@ author: "Gareth Rushgrove"
 branding:
   icon: "alert-triangle"
   color: "yellow"
+  
 on:
   push:
     branches: [ master ]
