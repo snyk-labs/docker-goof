@@ -16,5 +16,5 @@ steps:
     testType: 'container'
     dockerImageName: 'node:bullseye-slim'
     dockerfilePath: 'Dockerfile'
-    failOnIssues: true
+    failOnIssues: false
     monitorWhen: 'always'
