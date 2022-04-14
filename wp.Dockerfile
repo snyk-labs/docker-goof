@@ -1,4 +1,4 @@
-FROM wordpress:5-php8.1-fpm
+FROM wordpress:5
 
 RUN apt-get update
 RUN apt-get install -y imagemagick
